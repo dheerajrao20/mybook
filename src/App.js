@@ -1,10 +1,19 @@
-
-import './App.css';
-
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <h1>dgsvdx</h1>
+    
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/"  element={<Home/>} />
+          <Route exact path="/about" element={<About/>} />
+        </Routes>
+      </Router>
     </>
   );
 }
